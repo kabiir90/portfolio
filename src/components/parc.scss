@@ -1,0 +1,307 @@
+// EducationTimeline.scss
+.education-timeline {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%; /* Full height of the viewport */
+    margin: 0 auto;
+    padding: 0;
+    background-color: #CE4E47;
+    border-radius: 0; /* Remove border-radius for full coverage */
+  
+    .education-title-container {
+      text-align: center;
+      padding: 15px 0;
+      margin-bottom: 40px;
+      position: relative;
+      
+      @media (max-width: 768px) {
+        margin-bottom: 30px;
+        padding: 10px 0;
+      }
+      
+      @media (max-width: 480px) {
+        margin-bottom: 20px;
+      }
+    }
+    
+    .education-title {
+      text-align: center;
+      color: white;
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+      }
+    }
+    
+    .title-underline {
+      width: 100px;
+      height: 4px;
+      background-color: #f8b135;
+      margin: 10px auto 0;
+      
+      @media (max-width: 768px) {
+        width: 80px;
+        height: 3px;
+        margin: 8px auto 0;
+      }
+      
+      @media (max-width: 480px) {
+        width: 60px;
+        margin: 6px auto 0;
+      }
+    }
+    
+    .timeline-container {
+      position: relative;
+      padding: 0 15px;
+      
+      @media (max-width: 768px) {
+        padding: 0 10px;
+      }
+      
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20px;
+        height: 100%;
+        width: 3px;
+        background: linear-gradient(to bottom, #d14a43, #f8b135);
+        
+        @media (max-width: 480px) {
+          left: 15px;
+          width: 2px;
+        }
+      }
+    }
+    
+    .timeline-item {
+      padding-left: 60px;
+      margin-bottom: 40px;
+      position: relative;
+      
+      @media (max-width: 768px) {
+        padding-left: 45px;
+        margin-bottom: 30px;
+      }
+      
+      @media (max-width: 480px) {
+        padding-left: 40px;
+        margin-bottom: 25px;
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    .timeline-marker {
+      position: absolute;
+      left: 10px;
+      top: 6px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(to right, #d14a43, #f8b135);
+      border: 4px solid white;
+      box-shadow: 0 0 0 3px rgba(209, 74, 67, 0.3);
+      
+      @media (max-width: 768px) {
+        left: 9px;
+        width: 20px;
+        height: 20px;
+        border-width: 3px;
+      }
+      
+      @media (max-width: 480px) {
+        left: 8px;
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+        top: 8px;
+      }
+    }
+    
+    .timeline-content {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      
+      @media (max-width: 768px) {
+        padding: 15px;
+        border-radius: 6px;
+      }
+      
+      @media (max-width: 480px) {
+        padding: 12px;
+        border-radius: 5px;
+      }
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        
+        @media (max-width: 480px) {
+          transform: translateY(-3px); // Reduce hover effect on mobile
+        }
+      }
+    }
+    
+    .timeline-period {
+      display: inline-block;
+      background: linear-gradient(to right, #d14a43, #f8b135);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin: 0 0 12px;
+      
+      @media (max-width: 768px) {
+        padding: 4px 12px;
+        font-size: 0.85rem;
+        margin: 0 0 10px;
+      }
+      
+      @media (max-width: 480px) {
+        padding: 3px 10px;
+        font-size: 0.8rem;
+        margin: 0 0 8px;
+        border-radius: 15px;
+      }
+    }
+    
+    .timeline-degree {
+      margin: 0 0 8px;
+      color: #333;
+      font-size: 1.2rem;
+      
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+        margin: 0 0 6px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 1rem;
+        margin: 0 0 5px;
+      }
+    }
+    
+    .timeline-institution {
+      color: #666;
+      margin: 0 0 5px;
+      font-weight: 500;
+      font-style: italic;
+      
+      @media (max-width: 768px) {
+        font-size: 0.95rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+        margin: 0 0 4px;
+      }
+    }
+    
+    .timeline-option {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0 0 10px;
+      
+      @media (max-width: 768px) {
+        font-size: 0.85rem;
+        margin: 0 0 8px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 0.8rem;
+        margin: 0 0 6px;
+      }
+    }
+    
+    .timeline-description {
+      font-size: 0.95rem;
+      color: #777;
+      line-height: 1.5;
+      margin: 0;
+      
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 0.85rem;
+        line-height: 1.3;
+      }
+    }
+    
+    // Media query for wider screens
+    @media (min-width: 768px) {
+      .timeline-container:before {
+        left: 50%;
+        margin-left: -1.5px;
+      }
+      
+      .timeline-item {
+        padding-left: 0;
+        
+        &:nth-child(even) {
+          .timeline-content {
+            margin-left: auto;
+          }
+        }
+      }
+      
+      .timeline-marker {
+        left: 50%;
+        margin-left: -12px;
+      }
+      
+      .timeline-content {
+        width: 45%;
+        
+        &:before {
+          content: '';
+          position: absolute;
+          top: 10px;
+        }
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content {
+        margin-right: auto;
+      }
+    }
+    
+    // Fix for medium-sized screens
+    @media (min-width: 481px) and (max-width: 767px) {
+      .timeline-container:before {
+        left: 20px;
+      }
+      
+      .timeline-item {
+        padding-left: 60px;
+      }
+      
+      .timeline-marker {
+        left: 10px;
+        margin-left: 0;
+      }
+      
+      .timeline-content {
+        width: auto;
+      }
+    }
+  }

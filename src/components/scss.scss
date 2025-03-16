@@ -1,0 +1,504 @@
+// About.scss
+
+// Your color variables
+$color-dark: #3d348b;
+$color-gray: #7678ed;
+$color-light: #fffaea;
+$color-accent: #f18701;
+$color-title: #baa38b;
+$color-accent-dark: #f35b04;
+
+// Background color (if you want to keep the dark theme)
+
+.about {
+  padding: 60px 0; // Reduced padding for mobile
+  position: relative;
+  overflow: hidden;
+  
+  // Initial state for animation
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; // Reduced padding for mobile
+    
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+  
+  &__heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $color-light;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: $color-title;
+      transition: width 1s ease 0.3s;
+      
+      .visible & {
+        width: 100%;
+      }
+    }
+  }
+  
+  &__content {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      gap: 2rem;
+    }
+  }
+  
+  &__photo-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transition-delay: 0.2s;
+    
+    .visible & {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  &__photo-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 1.5rem;
+    border-radius: 50%; // Changed to circle
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba($color-light, 0.2), rgba($color-light, 0.1));
+    box-shadow: 0 10px 30px rgba($color-accent, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: pulse 3s infinite alternate; // Added continuous animation
+    
+    @media (max-width: 768px) {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 480px) {
+      width: 180px;
+      height: 180px;
+    }
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba($color-light, 0.4);
+    }
+  }
+  
+  &__photo-border {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    border: 3px solid $color-light;
+    border-radius: 50%; // Changed to circle
+    z-index: 1;
+    opacity: 0.8; // Always visible
+    animation: rotate 8s linear infinite; // Continuous rotation animation
+    
+    @media (max-width: 768px) {
+      top: -10px;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      border-width: 2px;
+    }
+  }
+  
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; // Changed to circle
+    position: relative;
+    z-index: 2;
+    filter: grayscale(20%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+    animation: zoom 5s ease-in-out infinite alternate; // Added continuous animation
+    
+    &:hover {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+    }
+  }
+  
+  &__photo-details {
+    text-align: center;
+    opacity: 1; // Always visible
+    animation: float 4s ease-in-out infinite; // Added continuous animation
+  }
+  
+  &__name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $color-light;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba($color-light, 0.3);
+    
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  &__title {
+    font-size: 1.2rem;
+    color: $color-title;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba($color-light, 0.3);
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+  
+  &__info {
+    flex: 1.5;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transition-delay: 0.4s;
+    
+    .visible & {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  &__description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $color-light;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    &:last-of-type {
+      margin-bottom: 2rem;
+      
+      @media (max-width: 768px) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  
+  &__skills {
+    margin-top: 2rem;
+    
+    @media (max-width: 768px) {
+      margin-top: 1.5rem;
+    }
+  }
+  
+  &__skill {
+    margin-bottom: 1.2rem;
+    
+    @media (max-width: 768px) {
+      margin-bottom: 1rem;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__skill-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $color-light;
+    font-weight: 500;
+    font-size: 1rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+  }
+  
+  &__skill-bar {
+    height: 8px;
+    background-color: rgba($color-light, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    
+    @media (max-width: 768px) {
+      height: 6px;
+    }
+  }
+  
+  &__skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, $color-accent, $color-accent-dark);
+    border-radius: 4px;
+    position: relative;
+    width: 0;
+    transition: width 1.5s ease;
+    
+    .visible & {
+      width: var(--progress-width);
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 10px;
+      height: 100%;
+      background-color: rgba($color-light, 0.3);
+      animation: pulse 1.5s infinite;
+      
+      @media (max-width: 768px) {
+        width: 8px;
+      }
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba($color-accent, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba($color-accent, 0.7);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.05);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.outils {
+  width: 100%;
+  height: 100%;
+  padding: 60px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  
+  @media (max-width: 768px) {
+    padding: 40px 0;
+  }
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d14a43;
+    z-index: 1;
+  }
+  
+  
+  &__container {
+    position: relative;
+    z-index: 2;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    @media (max-width: 768px) {
+      padding: 0 15px;
+    }
+  }
+  
+  &__heading {
+    text-align: center;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  &__underline {
+    width: 120px;
+    height: 3px;
+    background-color: #d74a4a;
+    margin: 0 auto 40px;
+    
+    @media (max-width: 768px) {
+      width: 100px;
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 480px) {
+      width: 80px;
+      margin-bottom: 25px;
+    }
+  }
+  
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+    }
+    
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+    }
+  }
+  
+  &__card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    @media (max-width: 768px) {
+      padding: 15px;
+    }
+    
+    @media (max-width: 480px) {
+      padding: 12px;
+      border-radius: 6px;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      background-color: rgba(215, 74, 74, 0.3);
+    }
+  }
+  
+  &__card-icon {
+    font-size: 40px;
+    color: #d74a4a;
+    margin-bottom: 15px;
+    
+    @media (max-width: 768px) {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    
+    svg {
+      width: 40px;
+      height: 40px;
+      
+      @media (max-width: 768px) {
+        width: 30px;
+        height: 30px;
+      }
+      
+      @media (max-width: 480px) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  
+  &__card-title {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
+  }
+}
