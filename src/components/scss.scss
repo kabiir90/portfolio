@@ -57,7 +57,7 @@ $color-accent-dark: #f35b04;
       left: 0;
       width: 0;
       height: 3px;
-      background: $color-title;
+      background: #ffffff;
       transition: width 1s ease 0.3s;
       
       .visible & {
@@ -405,7 +405,7 @@ $color-accent-dark: #f35b04;
   &__underline {
     width: 120px;
     height: 3px;
-    background-color: #d74a4a;
+    background-color: #ffffff;
     margin: 0 auto 40px;
     
     @media (max-width: 768px) {
@@ -459,7 +459,7 @@ $color-accent-dark: #f35b04;
   
   &__card-icon {
     font-size: 40px;
-    color: #d74a4a;
+    color: #dfc0c0;
     margin-bottom: 15px;
     
     @media (max-width: 768px) {

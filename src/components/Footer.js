@@ -41,7 +41,7 @@ export const Footer = () => {
 
   const footerLinks = [
     { href: "#home", label: "Home" },
-    { href: "#skills", label: "Skills" },
+    { href: "#outils", label: "Skills" },
     { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" }
   ];
@@ -68,7 +68,7 @@ export const Footer = () => {
                   height: 'auto', 
                   transition: 'transform 0.5s ease',
                   borderRadius: '10px',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                  boxShadow: '0 4px 6px rgba(255, 255, 255, 0.1)'
                 }}
               />
               <br/>
@@ -76,7 +76,7 @@ export const Footer = () => {
               <br/>
             </motion.div>
             <div className="contact-info mt-3">
-              <p>📞 Phone: +212 655-639386</p>
+              <p>📞 Phone: +212 720 90 11 37</p>
               <p>✉️ Email: oulkabirmohamed90@gmail.com</p>
             </div>
           </Col>
@@ -144,18 +144,18 @@ export const Footer = () => {
         {/* Copyright with glowing effect */}
         <Row>
           <Col className="text-center mt-4">
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="text-muted"
-              style={{
-                textShadow: '0 0 10px rgba(0,123,255,0.5)',
-                letterSpacing: '1px'
-              }}
-            >
-              © 2025 Kabir Portfolio. All Rights Reserved
-            </motion.p>
+          <motion.p
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+  className="text-white" // or text-primary, text-success, text-info, etc.
+  style={{
+    textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+    letterSpacing: '1px'
+  }}
+>
+  © 2025 Kabir Portfolio. All Rights Reserved
+</motion.p>
           </Col>
         </Row>
       </Container>

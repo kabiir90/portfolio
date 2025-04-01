@@ -73,7 +73,7 @@ export const Contact = () => {
   return (
     <section 
       className="contact py-5" 
-      id="connect" 
+      id="contact" 
       style={{ 
         backgroundImage: `url(${contactBg})`,
         backgroundSize: 'cover',

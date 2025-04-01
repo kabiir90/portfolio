@@ -1,8 +1,10 @@
 // About.jsx
 import React, { useEffect, useRef } from 'react';
-import './scss.scss';
-import myPhoto from '../assets/img/kabirfoto.jpg'; // Update this path to your actual photo
-import backgroundImage from '../assets/img/aboutback.png'; // Add your background image path here
+import './scss.scss'; // Ensure the correct path to your SCSS file
+
+import myPhoto from '../assets/img/kabirfoto.jpg'; // Corrected file extension and path
+import backgroundImage from '../assets/img/aboutback.png'; // Removed incorrect 'src/' reference
+// Add your background image path here
 
 const About = () => {
   const sectionRef = useRef(null);

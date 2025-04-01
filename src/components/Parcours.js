@@ -1,33 +1,33 @@
 import React from 'react';
 import './parc.scss';
 
-const Parcours = () => {
+const Education = () => {
   const educationData = [
     {
       period: '2024 - Present',
-      degree: 'Licence Professionnelle en Génie Logiciel',
+      degree: 'Professional Bachelor in Software Engineering',
       institution: 'ESTEM',
-      description: 'Formation axée sur le développement logiciel et les méthodologies de conception.'
+      description: 'Training focused on software development and design methodologies.'
     },
     {
       period: '2022 - 2024',
-      degree: 'Diplôme Technicien Spécialisé en Développement Multimedia',
-      institution: 'Institut Spécialisé',
-      description: 'Acquisition de compétences en développement web, design d\'interfaces et création de contenu multimédia.'
+      degree: 'Specialized Technician Diploma in Multimedia Development',
+      institution: 'Best Institute',
+      description: 'Acquisition of skills in web development, interface design and multimedia content creation.'
     },
     {
       period: '2021 - 2022',
-      degree: 'Baccalauréat',
-      institution: 'Lycée',
-      option: 'Physique Chimie',
-      description: 'Formation scientifique avec spécialisation en physique et chimie.'
+      degree: 'High School Diploma',
+      institution: 'High School',
+      option: 'Physics and Chemistry',
+      description: 'Scientific education with specialization in physics and chemistry.'
     }
   ];
 
   return (
-    <div className="education-timeline" >
+    <div className="education-timeline">
       <div className="education-title-container">
-        <h2 className="education-title">PARCOURS SCOLAIRE</h2>
+        <h2 className="education-title">EDUCATIONAL BACKGROUND</h2>
         <div className="title-underline"></div>
       </div>
       <div className="timeline-container">
@@ -50,4 +50,4 @@ const Parcours = () => {
   );
 };
 
-export default Parcours;
+export default Education;
