@@ -63,7 +63,7 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Mohamed Web`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{`Hi! I'm Mohamed Web`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                 <p style={{ color: "white" }}>I specialize in creating modern websites, web applications, and innovative designs. With expertise in React.js, .NET, C#, SQL, JavaScript, and UI/UX design, I craft responsive, high-performance digital experiences. Whether it's building functional web applications, designing stunning interfaces, or developing scalable solutions, I am passionate about bringing ideas to life with creativity and efficiency.</p>
                 <button className="letsconect" onClick={handleConnect}>
                   Let's Connect <ArrowRightCircle size={25} />
