@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Developer"];
+  const toRotate = ["Web Developer", "Backend Developer", "Frontend Developer", "Fullsack Developer"];
   const period = 2000;
   
   const handleConnect = () => {
@@ -19,7 +19,7 @@ export const Banner = () => {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
-  }; // Added closing curly brace here
+  };
   
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -27,7 +27,7 @@ export const Banner = () => {
     }, delta);
     
     return () => { clearInterval(ticker) };
-  }, [text])
+  }, [text]);
   
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -52,7 +52,7 @@ export const Banner = () => {
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
-  }
+  };
   
   return (
     <section className="banner" id="home">
@@ -63,7 +63,7 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Mohamed Web`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{`Hi! I'm Mohamed Kabir   *`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ "Web Developer", "Backend Developer", "Frontend Developer",  "Fullsack Developer"]'><span className="wrap">{text}</span></span></h1>
                 <p style={{ color: "white" }}>I specialize in creating modern websites, web applications, and innovative designs. With expertise in React.js, .NET, C#, SQL, JavaScript, and UI/UX design, I craft responsive, high-performance digital experiences. Whether it's building functional web applications, designing stunning interfaces, or developing scalable solutions, I am passionate about bringing ideas to life with creativity and efficiency.</p>
                 <button className="letsconect" onClick={handleConnect}>
                   Let's Connect <ArrowRightCircle size={25} />
@@ -82,5 +82,5 @@ export const Banner = () => {
         </Row>
       </Container>
     </section>
-  )
-}
+  );
+};

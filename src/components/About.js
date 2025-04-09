@@ -16,7 +16,7 @@ const About = () => {
           entry.target.classList.add('visible');
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.0 }
     );
     
     if (sectionRef.current) {
